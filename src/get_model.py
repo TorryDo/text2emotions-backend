@@ -10,7 +10,7 @@ from nltk.corpus import stopwords
 from nltk.stem import WordNetLemmatizer
 from sklearn.preprocessing import LabelEncoder
 
-import utils
+from src import utils
 
 path_test_txt = 'data/test.txt'
 path_train_txt = 'data/train.txt'
@@ -158,7 +158,7 @@ X_val = pad_sequences(sequences_val, maxlen=229, truncating='pre')
 vocabSize = len(tokenizer.index_word) + 1
 
 # predict model
-model = tf.keras.models.load_model('models/t2es_rnn')
+model = tf.keras.models.load_model(path_model_saved)
 
 
 def predict(sentence: str) -> tuple[str, float]:

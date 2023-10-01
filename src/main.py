@@ -2,7 +2,7 @@ import time
 
 from fastapi import FastAPI
 
-import get_model
+from src import get_model
 
 app = FastAPI()
 
