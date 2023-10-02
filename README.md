@@ -1,5 +1,5 @@
 ### Text to Emotions API ⚡
-This is the `backend` project that implements my [Text to Emotions Model](https://github.com/TorryDo/text2emotion_RNN) 🤖 using [FastAPI](https://github.com/tiangolo/fastapi) ⚡
+This is the `backend` project that implements my [Text to Emotions Model](https://github.com/TorryDo/text2emotions_RNN) 🤖 using [FastAPI](https://github.com/tiangolo/fastapi) ⚡
 
 ### How to run?
 
