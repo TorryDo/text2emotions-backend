@@ -2,7 +2,7 @@ import time
 
 from fastapi import FastAPI
 
-from src import get_model
+from src.my_model import MyModel
 
 app = FastAPI()
 
@@ -18,16 +18,20 @@ def read_root():
     }
 
 
+my_model = MyModel()
+
+
 @app.get("/v1/get_emotions/")
 def text_to_emotions(sentence: str, max_label: int = 2):
+
     time_start = time.time()
-    l = get_model.predicts(sentence)
+    predictions = my_model.predicts(sentence)
     time_consumed = time.time() - time_start
 
-    l = sorted(l, key=lambda tp: tp[1], reverse=True)[:max_label]
+    predictions = sorted(predictions, key=lambda tp: tp[1], reverse=True)[:max_label]
 
     result = []
-    for label, probability in l:
+    for label, probability in predictions:
         label_prob = {
             'label': label,
             'probability': probability
